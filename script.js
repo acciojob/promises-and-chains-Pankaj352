@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const subBtn = document.getElementById("btn");
 
     subBtn.addEventListener("click", (e) => {
-        e.preventDefault(); 
+        e.preventDefault(); // Prevent form submission
 
         if (!ageInput.value || nameInput.value.trim() === "") {
             window.alert("Please enter valid details.");
-            return; 
+            return;
         }
 
         new Promise((resolve, reject) => {
@@ -23,11 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
         .then((message) => {
-            console.log(message);
+            // console.log(message);
             window.alert(message);
         })
         .catch((message) => {
-            console.log(message);
+            // console.log(message);
             window.alert(message);
         });
     });
