@@ -1,18 +1,20 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const ageInput = document.getElementById("age");
     const nameInput = document.getElementById("name");
     const subBtn = document.getElementById("btn");
 
     subBtn.addEventListener("click", (e) => {
-        e.preventDefault(); // Prevent form submission
+        e.preventDefault(); 
 
+        // Validation 
         if (!ageInput.value || nameInput.value.trim() === "") {
             window.alert("Please enter valid details.");
             return;
         }
 
         new Promise((resolve, reject) => {
-            if (parseInt(ageInput.value) > 18) {
+            const age = parseInt(ageInput.value);
+            if (age > 18) {
                 setTimeout(() => {
                     resolve(`Welcome, ${nameInput.value}. You can vote.`);
                 }, 4000);
@@ -23,11 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
         .then((message) => {
-            // console.log(message);
             window.alert(message);
         })
         .catch((message) => {
-            // console.log(message);
             window.alert(message);
         });
     });
