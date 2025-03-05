@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const subBtn = document.getElementById("btn");
 
     subBtn.addEventListener("click", (e) => {
-        e.preventDefault(); 
+        e.preventDefault(); // Prevent default form submission
 
-        // Validation 
+        // Validation: Ensure both fields are filled
         if (!ageInput.value || nameInput.value.trim() === "") {
-            window.alert("Please enter valid details.");
+            window.alert("Please enter valid details"); // ✅ Removed extra period (.)
             return;
         }
 
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 4000);
             } else {
                 setTimeout(() => {
-                    reject(`Oh sorry, ${nameInput.value}. You aren't old enough.`);
+                    reject(`Oh sorry ${nameInput.value}. You aren't old enough.`); // ✅ Removed extra comma
                 }, 4000);
             }
         })
