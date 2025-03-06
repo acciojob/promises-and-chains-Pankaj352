@@ -4,11 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const subBtn = document.getElementById("btn");
 
     subBtn.addEventListener("click", (e) => {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault(); 
 
-        // Validation: Ensure both fields are filled
         if (!ageInput.value || nameInput.value.trim() === "") {
-            window.alert("Please enter valid details"); // ✅ Removed extra period (.)
+            window.alert("Please enter valid details"); 
             return;
         }
 
